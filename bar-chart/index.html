@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Bar Chart</title>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+</head>
+<style>
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+.bar {
+  fill: orange;
+}
+.bar:hover {
+  fill: orangered ;
+}
+.x.axis path {
+  display: none;
+}
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+</style>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="../">Final Project</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li><a href="../">About</a></li>
+            <li><a href="../correlation-matrix/index.html">Chart 1</a></li>
+            <li><a href="../column-chart/index.html">Chart 2</a></li>
+            <li><a href="../pie-chart/index.html">Chart 3</a></li>
+            <li class="active"><a href="../bar-chart/index.html">Chart 4</a></li>
+            <li><a href="../histogram/index.html">Chart 5</a></li>
+          </ul>
+        </div>
+</nav>
+
+<div class="container">
+    <h2>Jumlah Lagu berdasarkan Penyanyi</h2>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+    <script>
+        window.onload = function () {
+          
+        var chart = new CanvasJS.Chart("chartContainer", {
+          animationEnabled: true,
+          
+          
+          axisX:{
+            interval: 1
+          },
+          axisY2:{
+            interlacedColor: "rgba(1,77,101,.2)",
+            gridColor: "rgba(1,77,101,.1)",
+            title: "Jumlah Lagu"
+          },
+          data: [{
+            type: "bar",
+            name: "companies",
+            axisYType: "secondary",
+            color: "#014D65",
+            dataPoints: [
+              { y: 1, label: "Bebe Rexha" },
+              { y: 2, label: "Ariana Grande" },
+              { y: 2, label: "Selena Gomez" },
+              { y: 2, label: "The Weeknd" },
+              { y: 2, label: "Imagine Dragons" },
+              { y: 2, label: "Camila Cabello" },
+              { y: 2, label: "Clean Bandit" },
+              { y: 2, label: "Migos" },
+              { y: 2, label: "Maroon 5" },
+              { y: 2, label: "Dua Lipa" },
+              { y: 2, label: "Khalid" },
+              { y: 2, label: "Kendrick Lamar" },
+              { y: 2, label: "Calvin Harris" },
+              { y: 2, label: "Ozuna" },
+              { y: 3, label: "Marshmello" },
+              { y: 3, label: "Ed Sheeran" },
+              { y: 4, label: "Drake" },
+              { y: 6, label: "Post Malone" },
+              { y: 6, label: "XXXTENTACION" }
+            ]
+          }]
+        });
+        chart.render();
+        
+        }
+        </script>
+        <div>
+            <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+            <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        </div>
+    <br>
+      <div class="panel panel-default">
+       <div class="panel-heading">Informasi Visualisasi</div>
+        <div class="panel-body">
+          <h5><b>Alasan Visualisasi</b></h5>
+          <p>Visualisasi ini menampilkan jumlah lagu yang dimiliki setiap
+            penyanyi pada Top Spotify Tracks 2018
+          </p>
+          <h5><b>Penjelasan Visualisasi</b></h5>
+          <p>Grafik ini menampilkan bar chart jumlah lagu berdasarkan
+            penyanyinya. Dari grafik tersebut dapat dilihat bahwa penyanyi
+            XXXTENTACION dan Post Malone memiliki jumlah lagu terbanyak pada
+            Top Spotify Tracks 2018.
+          </p>
+          <h5><b>Properties of Data</b></h5>
+          <p>Visualisasi ini menggunakan kolom 'Name' dan 'Artist' pada dataset.</p>
+          <h5><b>Properties of Image</b></h5>
+          <p>Visualisasi ini menampilkan diagram batang dengan fitur hover
+            yang menampilkan penyanyi dan jumlah lagunya.
+          </p>
+          <h5><b>Visual Encoding</b></h5>
+          <p><b>1) What</b><br>
+            Visualisasi ini menggunakan elemen horizontal bar chart.<br>
+            <b>2) Where</b><br>
+            Pada axis X menunjukkan jumlah/kuantitas dari lagu, sedangkan axis Y menunjukkan artis atau penyanyi dari lagu tersebut.<br>
+            <b>3) When</b><br>
+            Visualisasi Horizontal Bar Chart masih bersifat statis.<br>
+            <b>4) How</b><br>
+            Batang bar chart yang lebih panjang ke kanan menunjukkan jumlah lagu yang lebih banyak yang dimiliki oleh artis tertentu.</p>
+        </div>
+      </div>
+  </div>
+  </body>
+  </html>

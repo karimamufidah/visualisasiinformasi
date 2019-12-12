@@ -1,0 +1,141 @@
+<html>
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Pie Chart</title>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+</head>
+<body>
+
+		<nav class="navbar navbar-default">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <a class="navbar-brand" href="../">Final Project</a>
+                  </div>
+                  <ul class="nav navbar-nav">
+                    <li><a href="../">About</a></li>
+                    <li><a href="../correlation-matrix/index.html">Chart 1</a></li>
+                    <li><a href="../column-chart/index.html">Chart 2</a></li>
+                    <li class="active"><a href="../pie-chart/index.html">Chart 3</a></li>
+                    <li><a href="../bar-chart/index.html">Chart 4</a></li>
+                    <li><a href="../histogram/index.html">Chart 5</a></li>
+                  </ul>
+                </div>
+			  </nav>
+			  
+			  <div class="container">
+					<h2>Persentase Lagu Kolaborasi pada Top Spotify Tracks 2018</h2>
+					<div id="pieChart"></div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/d3/4.7.2/d3.min.js"></script>
+<script src="d3pie.min.js"></script>
+<script>
+var pie = new d3pie("pieChart", {
+	
+	"footer": {
+		"color": "#999999",
+		"fontSize": 10,
+		"font": "open sans",
+		"location": "bottom-left"
+	},
+	"size": {
+		"canvasHeight": 700,
+		"canvasWidth": 650,
+		"pieOuterRadius": "90%"
+	},
+	"data": {
+		"sortOrder": "value-desc",
+		"content": [
+			{
+				"label": "Yes",
+				"value": 29,
+				"color": "#4daa4b"
+			},
+			{
+				"label": "No",
+				"value": 71,
+				"color": "#efff00"
+			}
+		]
+	},
+	"labels": {
+		"outer": {
+			"format": "label-value2"
+		},
+		"mainLabel": {
+			"fontSize": 20
+		},
+		"percentage": {
+			"color": "#000000",
+			"fontSize": 20,
+			"decimalPlaces": 0
+		},
+		"value": {
+			"color": "#adadad",
+			"fontSize": 20
+		},
+		"lines": {
+			"enabled": true,
+			"style": "straight",
+			"color": "#000000"
+		},
+		"truncation": {
+			"enabled": true
+		}
+	},
+	"effects": {
+		"pullOutSegmentOnClick": {
+			"effect": "linear",
+			"speed": 400,
+			"size": 8
+		}
+	},
+	"misc": {
+		"gradient": {
+			"enabled": true,
+			"percentage": 100
+		}
+	}
+});
+</script>
+						<div class="panel panel-default">
+						 <div class="panel-heading">Informasi Visualisasi</div>
+							<div class="panel-body">
+								<h5><b>Alasan Visualisasi</b></h5>
+								<p>Visualisasi ini menampilkan perbandingan persentase
+									lagu hasil dari kolaborasi dan yang tidak.
+								</p>
+								<h5><b>Penjelasan Visualisasi</b></h5>
+								<p>Visualisasi ini menampilkan grafik pie chart berdasarkan
+									jenis lagu (kolaborasi atau tidak). Dari grafik tersebut
+									dapat dilihat bahwa sebanyak 29 lagu merupakan hasil kolaborasi
+									antar artis atau penyanyi, sedangkan 71 lagu lainnya merupakan
+									bukan hasil dari kolaborasi (dinyanyikan oleh satu artis).
+								</p>
+								<h5><b>Properties of Data</b></h5>
+								<p>Visualisasi ini menggunakan kolom 'Artists' dan 'Name' pada 
+									dataset.
+								</p>
+								<h5><b>Properties of Image</b></h5>
+								<p>Visualisasi ini menampilkan bentuk lingkaran dua dimensi dengan warna
+									yang berbeda untuk tiap jenis lagu.
+								</p>
+								<h5><b>Visual Encoding</b></h5>
+								<p><b>1) What</b><br>
+									Visualisasi ini menggunakan elemen circular shape.<br>
+									<b>2) Where</b><br>
+									Dua buah segmen yang terbagi pada pie chart ini menggambarkan perbandingan persentase lagu hasil dari kolaborasi dan yang tidak.<br>
+									<b>3) When</b><br>
+									Visualisasi Pie Chart masih bersifat statis.<br>
+									<b>4) How</b><br>
+									Segmen yang lebih luas menggambarkan perbandingan yang lebih besar pula. Begitupun sebaliknya.</p>
+							</div>
+						</div>
+			  </div>
+
+</body>
+</html>

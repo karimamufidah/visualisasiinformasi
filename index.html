@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Final Project Visualisasi Informasi</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.html">Final Project</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="index.html">About</a></li>
+      <li><a href="correlation-matrix/index.html">Chart 1</a></li>
+      <li><a href="column-chart/index.html">Chart 2</a></li>
+      <li><a href="pie-chart/index.html">Chart 3</a></li>
+      <li><a href="bar-chart/index.html">Chart 4</a></li>
+      <li><a href="histogram/index.html">Chart 5</a></li>
+    </ul>
+  </div>
+</nav>
+  
+<div class="container">
+  <h3><a href="https://www.kaggle.com/nadintamer/top-spotify-tracks-of-2018">Top Spotify Tracks of 2018</a></h3>
+  <div class="panel panel-default">
+    <div class="panel-heading">Info Dataset</div>
+    <div class="panel-body">
+      <p>Pada setiap akhir tahun, Spotify menyusun daftar putar 
+      lagu-lagu yang paling sering ditayangkan sepanjang tahun itu. Pada akhir tahun 2018, Spotify telah menyiapkan
+    100 lagu yang menjadi top playlist penggunanya. Data ini terdiri dari 
+    100 baris dan 16 kolom yang dijelaskan pada tabel di bawah ini.</p>
+  </div>
+    <div>
+        <table class="table table-bordered" >
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Nama Kolom</th>
+                <th>Tipe Data</th>
+                <th>Deskripsi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>ID</td>
+                <td>String</td>
+                <td>Spotify URI lagu</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Name</td>
+                <td>String</td>
+                <td>Judul lagu</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Artist</td>
+                <td>String</td>
+                <td>Nama penyanyi dari lagu</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Danceability</td>
+                <td>Decimal</td>
+                <td>Danceability menjelaskan seberapa cocok suatu lagu
+                   untuk menari berdasarkan pada kombinasi unsur-unsur 
+                   musik termasuk tempo, stabilitas ritme, kekuatan beat, 
+                   dan keteraturan keseluruhan. Nilai 0,0 paling tidak 
+                   bisa menari dan 1,0 paling bisa menari.</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Energy</td>
+                <td>Decimal</td>
+                <td>Energi adalah ukuran dari 0,0 hingga 1,0 dan mewakili 
+                  ukuran persepsi intensitas dan aktivitas. Biasanya, lagu 
+                  yang energik terasa cepat, keras, dan berisik. Sebagai 
+                  contoh, death metal memiliki energi tinggi, sedangkan 
+                  prelude Bach mendapat skor rendah pada skala. 
+                  Fitur perseptual yang berkontribusi pada atribut ini 
+                  meliputi rentang dinamis, persepsi kenyaringan, warna nada, 
+                  onset rate, dan entropi umum.</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Key</td>
+                <td>Integer</td>
+                <td>Key merupakan kunci yang digunakan pada sebuah lagu. 
+                  Integer memetakan ke pitch menggunakan notasi Pitch Class 
+                  standar. Misalnya. 0 = C, 1 = C♯ / D ♭, 2 = D, dan seterusnya.</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>Loudness</td>
+                <td>Decimal</td>
+                <td>Keseluruhan kenyaringan trek dalam desibel (dB). 
+                  Nilai kenyaringan rata-rata di seluruh trek dan berguna 
+                  untuk membandingkan kenyaringan relatif trek. 
+                  Kenyaringan adalah kualitas suara yang merupakan korelasi 
+                  psikologis utama dari kekuatan fisik (amplitudo). 
+                  Nilai kisaran khas antara -60 dan 0 db.</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>Mode</td>
+                <td>Integer</td>
+                <td>Mode menunjukkan modalitas (besar atau kecil) dari suatu trek, 
+                  jenis skala dari mana konten melodinya diturunkan. 
+                  Mayor diwakili oleh 1 dan minor adalah 0.</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>Speechiness</td>
+                <td>Decimal</td>
+                <td>Speechiness mendeteksi keberadaan kata-kata yang diucapkan di lagu. 
+                  Semakin eksklusif pidato seperti rekaman (mis. Acara bincang-bincang, 
+                  buku audio, puisi), semakin dekat dengan 1.0 nilai atribut. 
+                  Nilai di atas 0,66 menggambarkan trek yang mungkin seluruhnya terbuat 
+                  dari kata-kata yang diucapkan. Nilai antara 0,33 dan 0,66 menggambarkan 
+                  lagu yang mungkin berisi musik dan ucapan, baik dalam bagian atau 
+                  lapisan, termasuk kasus-kasus seperti musik rap. Nilai di bawah 0,33 
+                  kemungkinan besar mewakili musik dan lagu non-ucapan lainnya.</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>Acousticness</td>
+                <td>Decimal</td>
+                <td>
+                    Ukuran kepercayaan dari 0,0 hingga 1,0 dari apakah lagu akustik. 
+                    1.0 mewakili kepercayaan tinggi lagu adalah akustik.</td>
+              </tr>
+              <tr>
+                <td>11</td>
+                <td>Instrumentalness</td>
+                <td>Decimal</td>
+                <td>Memprediksi apakah suatu lagu tidak mengandung vokal. Suara "Ooh" 
+                  dan "aah" diperlakukan sebagai instrumen dalam konteks ini. Rap atau 
+                  trek kata yang diucapkan jelas "vokal". Semakin dekat nilai instrumentalness 
+                  ke 1.0, semakin besar kemungkinan trek tidak mengandung konten vokal. 
+                  Nilai di atas 0,5 dimaksudkan untuk mewakili trek instrumental, tetapi 
+                  kepercayaan diri lebih tinggi ketika nilai mendekati 1.0.</td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td>Liveness</td>
+                <td>Decimal</td>
+                <td>Mendeteksi keberadaan audiens dalam rekaman. Nilai liveness yang lebih 
+                  tinggi mewakili kemungkinan peningkatan bahwa trek dilakukan secara langsung. 
+                  Nilai di atas 0,8 memberikan kemungkinan kuat bahwa trek live.</td>
+              </tr>
+              <tr>
+                <td>13</td>
+                <td>Valance</td>
+                <td>Decimal</td>
+                <td>Ukuran 0,0 hingga 1,0 yang menggambarkan kepositifan musik yang 
+                  disampaikan oleh sebuah trek. Lagu dengan valensi tinggi terdengar 
+                  lebih positif (mis. Bahagia, ceria, gembira), sedangkan trek dengan 
+                  valensi rendah terdengar lebih negatif (mis. Sedih, tertekan, marah).</td>
+              </tr>
+              <tr>
+                <td>14</td>
+                <td>Tempo</td>
+                <td>Decimal</td>
+                <td>
+                    Perkiraan tempo trek secara keseluruhan dalam beat per minute (BPM). 
+                    Dalam terminologi musik, tempo adalah kecepatan atau kecepatan dari 
+                    bagian yang diberikan dan diturunkan langsung dari durasi beat rata-rata.</td>
+              </tr>
+              <tr>
+                <td>15</td>
+                <td>Duration</td>
+                <td>Integer</td>
+                <td>Durasi trek dalam milidetik.</td>
+              </tr>
+              <tr>
+                <td>16</td>
+                <td>Time Signature</td>
+                <td>Integer</td>
+                <td>
+                    Perkiraan tanda tangan waktu keseluruhan suatu trek. Tanda tangan waktu 
+                    (meter) adalah konvensi notasi untuk menentukan berapa banyak ketukan di 
+                    setiap bar (atau ukuran).</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">Praproses Data</div>
+    <div class="panel-body">
+      Praproses dan analisis data dilakukan menggunakan python.
+      Selama praproses data dilakukan pengecekan terkait apakah terdapat
+      data yang redundan dan missing value.<br>
+      Selanjutnya dilakukan analisis terkait data sesuai dengan kebutuhan 
+      yang kemudian divisualisasikan menggunakan chart atau grafik yang sesuai.
+    </div>
+  </div>
+  <div class="panel panel-default">
+      <div class="panel-heading">Stakeholder</div>
+      <div class="panel-body">
+        <h5><b>Pemilik Dataset</b></h5>
+        <p>Pemilik dataset bernama Nadin Tamer, seorang pelajar yang berasal dari Turki. Nadin mengunggah dataset tersebut melalui Kaggle pada awal tahun 2019. </p>
+        <h5><b>Pengguna Dataset</b></h5>
+        <p>Penggunaan dataset dapat digunakan oleh kalangan umum atau untuk
+          orang yang tertarik belajar visualisasi data science.</p>        
+        <h5><b>Pengguna Informasi</b></h5>
+        <p>Pengguna informasi dari dataset dapat digunakan oleh artis atau penyanyi,
+          manajemen atau label musik, promotor acara konser, atau orang-orang
+          yang tertarik untuk mengetahui top sportify tracks 2018.</p>        
+        <h5><b>Lingkungan Bisnis Terkait</b></h5>
+        <p>Spotify.com, Label musik</p>
+      </div>
+    </div>
+</div>
+
+</body>
+</html>

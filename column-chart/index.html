@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Column Chart</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-core.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-sunburst.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-pie.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-base.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="./inspector.css">
+</head>
+
+<body>
+        <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <a class="navbar-brand" href="../">Final Project</a>
+                  </div>
+                  <ul class="nav navbar-nav">
+                    <li><a href="../">About</a></li>
+                    <li><a href="../correlation-matrix/index.html">Chart 1</a></li>
+                    <li class="active"><a href="index.html">Chart 2</a></li>
+                    <li><a href="../pie-chart/index.html">Chart 3</a></li>
+                    <li><a href="../bar-chart/index.html">Chart 4</a></li>
+                    <li><a href="../histogram/index.html">Chart 5</a></li>
+                  </ul>
+                </div>
+              </nav>
+
+         
+              <div class="container">
+                    <h2>Klasifikasi Lagu berdasarkan Tempo pada Top Spotify Tracks 2018</h2>
+                    <script type="text/javascript">
+                      window.onload = function () {
+                      
+                      var chart = new CanvasJS.Chart("chartContainer", {
+                        theme: "light1", // "light2", "dark1", "dark2"
+                        animationEnabled: false, // change to true		
+                        
+                        data: [
+                        {
+                          // Change type to "bar", "area", "spline", "pie",etc.
+                          type: "column",
+                          dataPoints: [
+                            { label: "Allegro",  y: 47  },
+                            { label: "Andante", y: 44  },
+                            { label: "Presto", y: 7  },
+                            { label: "Length",  y: 1  },
+                            { label: "Adagio",  y: 1  }
+                          ]
+                        }
+                        ]
+                      });
+                      chart.render();
+                      
+                      }
+                      </script>
+                      <div>
+                          <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+                          <script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
+                      </div>
+                        <div class="panel panel-default">
+                         <div class="panel-heading">Informasi Visualisasi</div>
+                            <div class="panel-body">
+                              <h5><b>Alasan Visualisasi</b></h5>
+                              <p>Visualisasi ini menampilkan jenis klasifikasi lagu yang
+                                ada di Top Spotify Tracks 2018 berdasarkan temponya.
+                              </p>
+                              <h5><b>Penjelasan Visualisasi</b></h5>
+                              <p>Visualisasi ini menampilkan grafik column chart klasifikasi lagu. Berdasarkan 
+                                grafik tersebut dapat diketahui bahwa jumlah lagu pada klasifikasi jenis Allegro
+                                dan Andante mendominasi Top Spotify Tracks 2018. Biasanya terdapat pada genre
+                                musik hiphop, reggae, pop, dan rap.
+                              </p>
+                              <h5><b>Properties of Data</b></h5>
+                              <p>Visualisasi ini menggunakan kolom 'Tempo' yang ada pada dataset.
+                                Pada kolom tersebut nantinya akan dilakukan penggolongan, yaitu:<br>
+                                1. Length: very slow (20 bpm)<br>
+                                2. Adagio: slow and majestic (66 to 76 bpm)<br>
+                                3. Andante: at the pace, quite, a little vivacious (76 to 108 bpm)<br>
+                                4. Allegro: animated and fast (110 to 168 bpm)<br>
+                                5. Presto: very fast (168 to 200 bpm)
+                              </p>
+                              <h5><b>Properties of Image</b></h5>
+                              <p>Visualisasi ini menampilkan bentuk column chart dengan setiap jenis
+                                klasifikasi memiliki warna yang berbeda-beda.
+                              </p>
+                              <h5><b>Visual Encoding</b></h5>
+                              <p><b>1) What</b><br>
+                                Visualisasi ini menggunakan grafik column chart.<br>
+                                <b>2) Where</b><br>
+                                Pada axis X visualisasi menunjukkan lima buah klasifikasi jenis lagu yang didapatkan dengan melakukan pengelompokkan pada
+kolom 'Tempo'. Axis Y menunjukkan jumlah lagu yang termasuk kedalam golongan tersebut.<br>
+                                <b>3) When</b><br>
+                                Visualisasi column chart masih bersifat statis.<br>
+                                <b>4) How</b><br>
+                                Semakin tinggi batang column, maka jumlah lagu pada klasifikasi jenis lagu tersebut juga akan semakin besar.</p>
+                            </div>
+                        </div>
+              </div>
+              </body>
+              </html>
+

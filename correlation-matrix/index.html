@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Correlation Matrix</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+</head>
+<body>
+        <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <a class="navbar-brand" href="../">Final Project</a>
+                  </div>
+                  <ul class="nav navbar-nav">
+                    <li><a href="../">About</a></li>
+                    <li class="active"><a href="index.html">Chart 1</a></li>
+                    <li><a href="../column-chart/index.html">Chart 2</a></li>
+                    <li><a href="../pie-chart/index.html">Chart 3</a></li>
+                    <li><a href="../bar-chart/index.html">Chart 4</a></li>
+                    <li><a href="../histogram/index.html">Chart 5</a></li>
+                  </ul>
+                </div>
+              </nav>              
+
+        <div class="container">
+            <h2>Korelasi Antar Kolom pada Top Spotify Tracks 2018</h2>
+            <div style="display:inline-block;" id="legend"></div>
+                    <div style="display:inline-block; float: left" id="container"></div>
+                    <script src="main.js"></script>
+                
+                    <script>
+                    var correlationMatrix = [
+                        [1, -0.072582, 0.015517, 0.227075, -0.134374, -0.066592, -0.038761, 0.413855, -0.195012, -0.068368],
+                        [-0.072582, 1, 0.732719, -0.073591, -0.421209, 0.093684, 0.050542, 0.382434, 0.062272, 0.073017],
+                        [0.015517, 0.732719, 1, -0.252037, -0.269742, 0.036248, 0.000006, 0.407760, -0.035156, 0.265310],
+                        [0.227075, -0.073591, -0.252037, 1, -0.081536, -0.069543, -0.099379, -0.051054, 0.102999, -0.009856],
+                        [-0.134374, -0.421209, -0.269742, -0.081536, 1, -0.089583, -0.150177, -0.020800, -0.158013, -0.069627],
+                        [-0.066592, 0.093684, 0.036248, -0.069543, -0.089583, 1, -0.016249, -0.095123, 0.178142, -0.045873],
+                        [-0.038761, 0.050542, 0.000006, -0.099379, -0.150177, -0.016249, 1, -0.042612, -0.107652, -0.042942],
+                        [0.413855, 0.382434, 0.407760, -0.051054, -0.020800, -0.095123, -0.042612, 1, -0.148423, -0.131901],
+                        [-0.195012, 0.062272, -0.035156, 0.102999, -0.158013, 0.178142, -0.107652, -0.148423, 1, 0.005493],
+                        [-0.068368, 0.073017, 0.265310, -0.009856, -0.069627, -0.045873, -0.042942, -0.131901, 0.005493, 1]
+                    ];
+                    var labels = ['Danceability', 'Energy', 'Loudness', 'Speechiness', 'Accousticness', 'Instrumentalness', 'Liveness', 'Valance', 'Tempo', 'Duration'];
+                    Matrix({
+                        container : '#container',
+                        data      : correlationMatrix,
+                        labels    : labels,
+                        start_color : '#ffffff',
+                        end_color : '#3498db'
+                    });
+                </script>
+                <div class="panel panel-default">
+                 <div class="panel-heading">Informasi Visualisasi</div>
+                    <div class="panel-body">
+                      <h5><b>Alasan Visualisasi</b></h5>
+                      <p>Visualisasi ini menampilkan korelasi antar kolom pada dataset
+                        sehingga dapat dilihat kolom mana yang nilai korelasinya paling tinggi,
+                        yang mana artinya kolom tersebut sangat berhubungan.
+                      </p>
+                      <h5><b>Penjelasan Visualisasi</b></h5>
+                      <p>Visualisasi ini menampilkan grafik correlation matrix berdasarkan kolom.
+                        Berdasarkan grafik tersebut dapat disimpulkan bahwa kolom Energy dan Loudness
+                        memiliki korelasi yang paling tinggi diantara yang lain.
+                      </p>
+                      <h5><b>Properties of Data</b></h5>
+                      <p>Visualisasi ini menggunakan semua kolom pada dataset kecuali 'ID',
+                        'Name', 'Artist', dan 'Time Signature'.
+                      </p>
+                      <h5><b>Properties of Image</b></h5>
+                      <p>Visualisasi ini menampilkan bentuk persegi dua dimensi dengan
+                        warna gradasi biru yang berfungsi sebagai pertanda. Semakin memudar warna
+                        maka semakin kecil nilai matrix, sedangkan semakin solid warna maka nilai
+                        matrix semakin besar.
+                      </p>
+                      <h5><b>Visual Encoding</b></h5>
+                      <p><b>1) What</b><br>
+                        Visualisasi ini menggunakan grafik correlation matrix.<br>
+                        <b>2) Where</b><br>
+                        Pada cartesius X dan Y, visualisasi menampilkan tiap kolom yang ada pada data. Kemudian setiap kotak didalamnya mewakili nilai korelasi
+dari tiap antar kolom tersebut.<br>
+                        <b>3) When</b><br>
+                        Visualisasi correlation matrix masih bersifat statis.<br>
+                        <b>4) How</b><br>
+                        Bentuk persegi dua dimensi dengan warna gradasi biru berfungsi sebagai penunjuk besar korelasi antar kolom yang terdapat pada kedua
+sumbu. Semakin memudar warna maka semakin kecil nilai matrix, sedangkan semakin solid warna maka nilai matrix semakin besar.</p>
+                    </div>
+                </div>
+      </div>
+</body>
+</html>
